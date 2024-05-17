@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Cindelaras</title>
+    <link rel="icon" href="images/favicon.png">
+    <!-- Font Awesome from cdnjs.com -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- link swipper dari swipperjs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Alpine js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- App -->
+    <script src="js/app.js"></script>
+
+</head>
+
+<body>
+    <div id="shopping-cart-wrapper">
+        <!-- Shopping Cart -->
+        <div class="shopping-cart-button" x-data>
+            <template x-for="(item, index) in $store.cart.items" x-keys="index">
+                <div class="cart-tem">
+                    <img :src="images/menu/${item.img}`" :alt="item.name">
+                    <div class="item-detail">
+                        <h3 x-text="item.name"></h3>
+                        <div class="item-price">
+                            <span x-text="formatRupiah(item.price)"></span> &times;
+                            <button id="remove">&minus;</button>
+                            <span x-text="item.quantity"></span>
+                            <button id="add">&plus;</button>&equals;
+                            <span x-text="item.total"></span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <!-- Shopping Cart end -->
+    <header>
+        <a href="#" class="logo"><i class="fas-fa-untensils"></i>Cindelaras</a>
+        <nav class="navbar">
+            <a class="active" href="index.html">beranda</a>
+            <a href="menu.html">menu</a>
+            <a href="#about">tentang kami</a>
+            <a href="#review">review</a>
+        </nav>
+        <div class="icons" x-data>
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart shopping-cart-btn-open" id="shopping-cart-button">
+                <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+            </a>
+        </div>
+    </header>
+    <!-- header section end -->
+
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- Serch form end -->
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+                <!-- swipper bisa dihapus buat ngilangin swippernya -->
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Setiap gigitan, penuh kenikmatan!</span>
+                        <h3>Cindelaras</h3>
+                        <p>Warung Cindelaras hadir dengan menu makanan yang lezat dengan kenikmatan tiada tara</p>
+                        <a href="menu.html" class="btn">Order Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/menu/IMG_nila.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- dishes section starts -->
+    <section class="product" id="product" x-data="product">
+        <h3 class="sub-heading">Makanan</h3>
+        <h1 class="heading">makanan terlaris kami</h1>
+        <div class="box-container">
+            <template x-for="(item, index) in items" x-key="index">
+                <div class="box">
+                    <div>
+                        <div class="icon">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img :src="`images/menu/${item.img}`" alt="${item.name}">
+                        </div>
+                        <div class="content">
+                            <h3 x-text="item.name"></h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="price-chart">
+                            <span x-text="formatRupiah(item.price.toString(), 'Rp')"></span><br>
+                            <a href="#" @click.prevent="$store.cart.add(item)" class="btn">add to chart</a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+    <!-- dishes section ends -->
+
+    <!-- about section starts -->
+    <section class="about" id="about">
+        <h3 class="sub-heading">Tentang Kami</h3>
+        <h1 class="heading">Kenapa anda harus makan disini ?</h1>
+        <div class="row">
+            <div class="image">
+                <!-- <img src="images/about-img.png" alt=""> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eRKBBdbb31E?si=0KyjuZQA2aybS5ng"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="content">
+                <h3>warung masakan nusantara</h3>
+                <p>Warung Cindelaras adalah tempat makan yang menyajikan masakan-masakan Indonesia dengan cita rasa yang
+                    lezat dan harga yang terjangkau. Warung ini terletak di Sleman Regency, Special Region of
+                    Yogyakarta, Indonesia.
+
+                    Warung Cindelaras didirikan pada tahun 2024 dengan tujuan untuk menyediakan makanan yang lezat dan
+                    bergizi bagi masyarakat sekitar. Warung ini menggunakan bahan-bahan segar dan berkualitas tinggi
+                    untuk membuat semua hidangannya.</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Gratis Ongkir</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Bisa QRIS</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-headset"></i>
+                        <span>buka jam 1 siang - 12 malam</span>
+                    </div>
+                </div>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+
+
+    <!-- review section starts -->
+    <section class="review" id="review">
+        <h3 class="sub-heading">review pelanggan</h3>
+        <h1 class="heading">pengalaman mereka</h1>
+
+        <div class="swiper-container review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-1.png" alt="">
+                        <div class="user-info">
+                            <h3>Ahmad Bukhori</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Ayam Goreng, Lele Penyet, Nila Penyet sambel bawang sambel matangnya.. semuanya enakk.. murah
+                        meriah.. yg masak insyaallah Sholeh sholehah.. Halalan Toyyiban.. aamiin..</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-2.png" alt="">
+                        <div class="user-info">
+                            <h3>Achmad Yesa</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Mantab, saya pesan via gofood, rasanya enak, nasi dan ayamnya hangat, sambalnya pedesnya pas,
+                        makasih</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-3.png" alt="">
+                        <div class="user-info">
+                            <h3>Salma Suryaningrum</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Harga murah, 13rb sudah bisa dapat menu komplit, enak dan higienis.</p>
+                </div>
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/pic-4.png" alt="">
+                        <div class="user-info">
+                            <h3>Afien Jogja</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>ayamnya gurih sambelnya mantap... pesan gofood grabfood ready</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- review section ends -->
+
+    <!-- order section starts -->
+    <!-- <section class="order" id="order">
+            <h3 class="sub-heading">Order Now</h3>
+        <h1 class="heading">Free and Fast</h1>
+        <form action="">
+            <div class="inputBox">
+                <div class="input">
+                    <span>your name</span>
+                    <input type="text" placeholder="enter your name">
+                </div>
+                <div class="input">
+                    <span>your name</span>
+                    <input type="number" placeholder="enter your number">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>your order</span>
+                    <input type="text" placeholder="enter food name">
+                </div>
+                <div class="input">
+                    <span>additional food</span>
+                    <input type="text" placeholder="extra with food">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>how much</span>
+                    <input type="number" placeholder="how many orders">
+                </div>
+                <div class="input">
+                    <span>date and time</span>
+                    <input type="datetime-local">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>your address</span>
+                    <textarea name="" placeholder="enter your address" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input">
+                    <span>your message</span>
+                    <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <input type="submit" value="order now" class="btn">
+        </form>
+
+        </section> -->
+
+    <!-- order section ends -->
+
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Lokasi Kami</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.2179021799743!2d110.40629017588623!3d-7.766702177037676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59cbe7a5f70f%3A0xb4d0458f961dd412!2sCindelaras%20Seturan!5e0!3m2!1sid!2sid!4v1714715361272!5m2!1sid!2sid"
+                    width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="box">
+                <h3>Navigasi Cepat</h3>
+                <a href="index.html">home</a>
+                <a href="menu.html">menu</a>
+                <a href="#about">tentang kami</a>
+                <a href="#review">review</a>
+            </div>
+            <div class="box">
+                <h3>Kontak Kami</h3>
+                <a href="#">0817-5450-216</a>
+                <a href="#">warungcindelaras@gmail.com</a>
+            </div>
+            <div class="box">
+                <h3>Ikuti Kami</h3>
+                <a href="https://www.instagram.com/waroengpenyetcindelaras/">instagram</a>
+                <a
+                    href="https://gofood.co.id/id/yogyakarta/restaurant/warung-penyetan-cindelaras-seturan-52c9bd65-d619-40c5-a93e-449cb0ee518c">gojek</a>
+            </div>
+        </div>
+        <div class="credit">copyright @ 2024 by <span>Kelompok UTY</span></div>
+    </section>
+    <!-- footer section ends -->
+
+    <!-- script swipperjs.com -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- custom js file link -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

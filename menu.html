@@ -1,0 +1,297 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Warung Cindelaras</title>
+    
+        <!-- Font Awesome from cdnjs.com -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- link swipper dari swipperjs -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    </head>
+    <body>
+
+        <header>
+            <a href="#" class="logo"><i class="fas-fa-untensils"></i>Cindelaras</a>
+            <nav class="navbar">
+                <a href="index.html">beranda</a>
+                <a class="active" href="menu.html">menu</a>
+                <a href="index.html#about">tentang kami</a>
+                <a href="index.html#review">review</a>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-bars" id="menu-bars"></i>
+                <i class="fas fa-search" id="search-icon"></i>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+            </div>
+        </header>        
+        <!-- search form -->
+        <form action="" id="search-form">
+            <input type="search" placeholder="search here..." name="" id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+            <i class="fas fa-times" id="close"></i>
+        </form>
+        <!-- search form ends -->
+
+        <!-- menu section starts -->
+        <section style="margin-top: 50px;" class="menu" id="menu">
+            <h3 class="sub-heading">our menu</h3>
+            <h1 class="heading">today's speciality</h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Pecel Ayam.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Pecel Ayam</h3>
+                        <p>Ayam + Sambal + Lalapan</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 12.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_pecel lele.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Pecel lele</h3>
+                        <p>lele goreng + Sambal + Lalapan</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 12.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_nila.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Nila Goreng / Bakar</h3>
+                        <p>Nila Goreng / Bakar + Sambal + Lalapan</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 16.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Nasgor.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>nasi goreng</h3>
+                        <p>nasi goreng + sayuran + kerupuk + sosis</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 14.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Mi Goreng.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Mie Goreng</h3>
+                        <p>Mie Goreng  + sayuran + kerupuk</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 13.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Kwetiau.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Kweatiau</h3>
+                        <p>Kweatiau basah / kering</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 14.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Kangkung.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Cah Kangkung</h3>
+                        <p>Cah Kangkung Pedas enak</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 6.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Tempe Mendoan.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Tempe Mendoan</h3>
+                        <p>4 tempe medoan + sambal kecap</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 6.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Tahu.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Tahu</h3>
+                        <p>4 Tahu Goreng + sambal kecap</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 6.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Es-jeruk.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Es/Panas Jeruk</h3>
+                        <p>Es/Panas Jeruk</p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 4.000</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/menu/IMG_Es tehpng.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>Es/Panas Teh</h3>
+                        <p>Es/Panas Teh </p>
+                    <a href="#" class="btn">add to chart</a>
+                    <span class="price">Rp. 4.000</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- menu section ends -->
+
+
+
+        <!-- footer section starts -->
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Lokasi Kami</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.2179021799743!2d110.40629017588623!3d-7.766702177037676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59cbe7a5f70f%3A0xb4d0458f961dd412!2sCindelaras%20Seturan!5e0!3m2!1sid!2sid!4v1714715361272!5m2!1sid!2sid" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="box">
+                    <h3>Navigasi Cepat</h3>
+                    <a href="index.html">home</a>
+                    <a href="menu.html">menu</a>
+                    <a href="#about">tentang kami</a>
+                    <a href="#review">review</a>
+                </div>
+                <div class="box">
+                    <h3>Kontak Kami</h3>
+                    <a href="#">0817-5450-216</a>
+                    <a href="#">warungcindelaras@gmail.com</a>
+                </div>
+                <div class="box">
+                    <h3>Ikuti Kami</h3>
+                    <a href="https://www.instagram.com/waroengpenyetcindelaras/">instagram</a>
+                    <a href="https://gofood.co.id/id/yogyakarta/restaurant/warung-penyetan-cindelaras-seturan-52c9bd65-d619-40c5-a93e-449cb0ee518c">gojek</a>
+                </div>
+            </div>
+            <div class="credit">copyright @ 2024 by <span>Kelompok UTY</span></div>
+        </section>
+        <!-- footer section ends -->
+
+        <!-- script swipperjs.com -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- custom js file link -->
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
